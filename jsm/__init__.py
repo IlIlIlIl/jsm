@@ -134,7 +134,7 @@ class QuotesCsv(object):
         q = Quotes()
         prices = q.get_historical_prices(ccode, range_type, start_date, end_date, all)
         c = csv.writer(open(path, 'w'))
-        for price in prices:
+        for price in prices[::-1]:
             c.writerow(self._price_to_csvl(price))
     
     def _price_to_csvl(self, price):
