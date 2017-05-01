@@ -43,7 +43,7 @@ class FinanceData(object):
         return default
     
     def _int(self, val, default=0):
-        return int(self._parse(val, default))
+        return int(float(self._parse(val, default)))
     
     def _float(self, val, default=0.0):
         return float(self._parse(val, default))
